@@ -242,7 +242,7 @@ const char *strxf_proto(__u8 proto)
 	const char *p;
 
 	pp = getprotobynumber(proto);
-	if (pp)
+	if (pp && !numeric)
 		p = pp->p_name;
 	else {
 		sprintf(buf, "%u", proto);
